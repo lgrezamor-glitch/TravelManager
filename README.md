@@ -83,3 +83,8 @@ Each line starts with a tag:
 - Numeric input is validated so invalid user input does not stop the program.
 - When loading a file, malformed or incomplete lines are skipped and the program continues.
 - The save-file name is generated from the trip title, and invalid file-name characters are replaced.
+
+
+#readme Made by AI
+
+
