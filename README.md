@@ -1,86 +1,81 @@
 # Travel Manager
 
-Travel Manager is a simple C++17 console application for recording and managing trips. It stores each trip's general information, daily plans, activities, and expenses, and it can save data to or load data from plain-text `.trip` files.
+Travel Manager is a simple C++ console project for managing travel plans.  
+The idea of this program is to help the user create trips, add travel days, write down activities, record expenses, and save or load trip information when needed.
 
-## Features
+I made this project as a small travel planning system with a terminal menu. The program is not meant to be a full professional travel application, but it covers the main parts needed for organizing a basic trip.
 
-- Create trips with a title, destination, start date, end date, and notes
-- Add multiple days to each trip
-- Record activities such as tourist visits, meals, and transport
-- Record expenses and calculate both daily totals and the total trip cost
-- Save and load data using plain-text `.trip` files
-- Use an interactive terminal menu
+## Project Files
 
-## Project structure
+This repository includes:
+
+- `main.cpp` — the main source code of the program
+- `TravelManager.exe` — executable version of the program for Windows
+- `TravelManager.mp4` — a short video showing the project
+- `README.md` — project explanation
+
+## What the Program Can Do
+
+The program has a simple menu where the user can:
+
+- create a new trip
+- enter trip information such as title, destination, start date, end date, and notes
+- view the list of saved trips
+- see full details of a selected trip
+- add travel days
+- add activities for each day
+- record trip expenses
+- save trips into files
+- load trip information from a file
+
+## Activities
+
+For each travel day, the user can add different types of activities, such as:
+
+- tourist visits
+- meals
+- transport activities
+
+Each activity can include information like name, time, notes, and related details.
+
+## Expenses
+
+The program also allows the user to record expenses for a trip.  
+Expense categories include:
+
+- food
+- transport
+- accommodation
+- shopping
+- entertainment
+- other costs
+
+This makes it easier to keep track of how much money was spent during the trip.
+
+## Save and Load
+
+The project supports saving trip information into `.trip` files and loading it again later.  
+This is useful because the user does not need to enter all travel information again every time the program runs.
+
+## Demo
+
+A demo video is included in the repository as:
 
 ```text
-TravelManager/
-├── main.cpp
-├── include/
-│   ├── Activity.h
-│   ├── DayPlan.h
-│   ├── Expense.h
-│   ├── TravelManager.h
-│   └── Trip.h
-├── src/
-│   ├── Activity.cpp
-│   ├── DayPlan.cpp
-│   ├── Expense.cpp
-│   ├── TravelManager.cpp
-│   └── Trip.cpp
-├── build.bat
-├── build.sh
-├── .gitignore
-└── README.md
+TravelManager.mp4
 ```
 
-## Build and run
+The executable file is also included as:
 
-### Linux / macOS
-
-```bash
-chmod +x build.sh
-./build.sh
-./TravelManager
-```
-
-Or compile directly with `g++`:
-
-```bash
-g++ -std=c++17 -Wall -Wextra -pedantic -I include main.cpp src/*.cpp -o TravelManager
-./TravelManager
-```
-
-### Windows with MinGW
-
-```bat
-build.bat
+```text
 TravelManager.exe
 ```
 
-## Save-file format
+## Project Purpose
 
-Example `.trip` file:
+The purpose of this project was to practice C++ programming concepts in a practical way.  
+In this project, I worked with menus, user input, classes, file handling, activities, expenses, and basic data management.
 
-```text
-TRIP|Paris Summer Trip|Paris|2026/07/10|2026/07/13|Family vacation
-DAY|2026/07/10
-ACT|Visit|Eiffel Tower|10:00|Take photos|Eiffel Tower
-EXP|Food|Lunch|250000.00
-```
+## Project Name
 
-Each line starts with a tag:
-
-- `TRIP`: general trip information
-- `DAY`: one day of the trip
-- `ACT`: one activity on the current day
-- `EXP`: one expense on the current day
-
-## Implementation notes
-
-- `Activity` is the base class for activities; `TouristVisit`, `MealActivity`, and `TransportActivity` derive from it.
-- Each `Trip` contains multiple `DayPlan` objects, and each `DayPlan` contains multiple activities and expenses.
-- Numeric input is validated so invalid user input does not stop the program.
-- When loading a file, malformed or incomplete lines are skipped and the program continues.
-- The save-file name is generated from the trip title, and invalid file-name characters are replaced.
-
+Travel Manager — Travel planning and trip management program
